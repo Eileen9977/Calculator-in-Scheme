@@ -91,10 +91,9 @@ example for define simple functions
 
  -> the program output would be in quotations
  
- (1) 
-      : example1 2 = if 42 else 17 endif ;    
-      "defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then       insert 17"
- 
+ (1)  Defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then         insert 17
+
+      : example1 2 = if 42 else 17 endif ;   
        2 3 2 example1    
        "2 3 42" 
  
