@@ -115,11 +115,11 @@ example for define simple functions
      : loopnest 2 3 begin = while loop1 repeat . ;
      *defined a function named loopnest with nesting loops*
      
-      loop1 
+     loop1 
        *42*
        
-      loopnest
-      *42*
+     loopnest
+       *42*
  
  
  
