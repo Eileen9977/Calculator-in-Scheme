@@ -1,14 +1,19 @@
 # Calculator-in-Scheme Demo
 
 ## Basic Information
--> a calculator that allows arithmetic calculations and functions definitions with if statements and while loops
+-> A calculator that allows arithmetic calculations and functions definitions with if statements and while loops
+
+-> Calculator is in post-fix style
+
+-> spaces-using is sensitive in this program; spaces are used to seperate operands and operators
+
+-> The result of calculation would be stored in a stack; as long as the program is running the data stored in the stack would not be erased 
 
 -> Functions need to be defined before being called; that said, function definition and function call should not be in the same line of input
 
--> the result of calculation would be stored in a stack; as long as the program is running the data stored in the stack would not be erased 
+-> Allows using previous user-defined functions as the definition of a new user-defined function
 
-
--> operands implemented based on the concepts provided by gForth
+-> Operands implemented based on the concepts provided by gForth
 
 
 ## Operands and Instructions 
@@ -45,7 +50,7 @@
 
 ## Function Definition
 
-" : "       signal the beginning of function define, followed by function name and function definition
+" : "       signal the beginning of function define, followed by function name and function definition; space between the colon and function name is required;
 
 " ; "       signal marking the end of function define, followed right after the definition of the function; once " ; " is read in the program would print out the name of the function defined and the definition of the function
 
@@ -79,7 +84,7 @@ example for define simple functions
 
 " while "   check the condition by checking the top element in the stack; if it is -1 then apply the commands inside of the loop; if it is 0 then quit the loop; after " while " the top element in the stack is dropped
 
-" repeat "  " repeat " jumps back to the top of the loop, which is the "begin" in the loop in this program. "repeat" will forces the program to evaluate the loop condition again and "while" will decide whether to enter the loop again
+" repeat "  " repeat " jumps back to the top of the loop, which is the "begin" in the loop in this program. "repeat" will forces the program to evaluate the loop condition again and decide whether to enter the loop; if the condition is false the program will apply whatever commands following the "repeat"
 
 
 ## Some Examples
@@ -97,5 +102,27 @@ example for define simple functions
  
  5 fac 42 120 - +      
  *42*     
+ 
+ (3)  : if_call if 6 else 5 endif ;
+      : ifcall 6 0 1 < if 0 1 < if_call 0 1 > if_call * else 2 endif + 6 + . ;
+      *defined two functions if_call and ifcall; ifcall is defined by if_call; ifcall has nesting if statements*
+      
+      ifcall
+      *42*
+      
+ (4) : loop1 5 8 * 2 - 5 begin 1 - dup while swap 1 + dup . swap repeat . ;
+     *defined a function named loop1 that applies this loop when being called*
+     : loopnest 2 3 begin = while loop1 repeat . ;
+     *defined a function named loopnest with nesting loops*
+     
+      loop1 
+       *42*
+       
+      loopnest
+      *42*
+ 
+ 
+ 
+ 
  
  
