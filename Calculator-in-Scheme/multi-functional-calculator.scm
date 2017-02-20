@@ -1,7 +1,7 @@
 #lang r5rs
 (#%provide (all-defined))
 (#%require "stack.scm")
-(#%require "davew-string-input.scm")
+(#%require "String-input.scm")
 
 (define (false input-so-far)
   (display "Invalid input!")(newline)
