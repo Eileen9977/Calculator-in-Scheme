@@ -1,8 +1,11 @@
 # Calculator-in-Scheme Demo
 
 -> a calculator that allows arithmetic calculations and functions definitions with if statements and while loops
+
 -> the result of calculation would be stored in a stack; as long as the program is running the data stored in the stack would not be erased 
+
 -> operands implemented based on the concepts provided by gForth
+
 -> operands include: +     add
                      -     subtract
                      *     multiply
