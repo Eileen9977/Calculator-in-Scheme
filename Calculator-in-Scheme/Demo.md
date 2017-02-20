@@ -3,6 +3,7 @@
 ## Basic Information
 -> a calculator that allows arithmetic calculations and functions definitions with if statements and while loops
 
+-> Functions need to be defined before being called; that said, function definition and function call should not be in the same line of input
 
 -> the result of calculation would be stored in a stack; as long as the program is running the data stored in the stack would not be erased 
 
@@ -46,7 +47,7 @@
 
 " : "       signal the beginning of function define, followed by function name and function definition
 
-" ; "       signal marking the end of function define, followed right after the definition of the function
+" ; "       signal marking the end of function define, followed right after the definition of the function; once " ; " is read in the program would print out the name of the function defined and the definition of the function
 
 example for define simple functions
 : getThree 1 2 + ;           --> when type in    1 2 getThree    we get    1 2 3 
@@ -57,6 +58,8 @@ example for define simple functions
 
 -> attention: if statements and while loops can only be used through function definition; that to say, we can only apply if statement and while loops when they are defined inside of a function
 
+
+-> both if statements and while loops allow nesting
 ### if statement
 (1) if statement contains three signals:   *condition*  if  *if-true statements*  else  *if-false statements*  endif  
 
@@ -76,4 +79,15 @@ example for define simple functions
 " repeat "  " repeat " jumps back to the top of the loop, which is the "begin" in the loop in this program. "repeat" will forces the program to evaluate the loop condition again and "while" will decide whether to enter the loop again
 
 
+## Some Examples
 
+ -> the program output would be in italic
+ 
+ (1) : example1 2 = if 42 else 17 endif ;     *defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then insert 17*
+ 
+ 2 3 2 example1    *2 3 42* 
+ 
+ (2) : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a while loop;
+ 
+ 5 fac 42 120 - +       *42*     --note that the while loop would not break until the condition is true--
+ 
