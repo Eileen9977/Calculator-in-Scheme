@@ -1,4 +1,4 @@
-### Calculator-in-Scheme Demo
+# Calculator-in-Scheme Demo
 
 ## Basic Information
 -> a calculator that allows arithmetic calculations and functions definitions with if statements and while loops
@@ -57,7 +57,7 @@ example for define simple functions
 
 -> attention: if statements and while loops can only be used through function definition; that to say, we can only apply if statement and while loops when they are defined inside of a function
 
-# if statement
+### if statement
 (1) if statement contains three signals:   *condition*  if  *if-true statements*  else  *if-false statements*  endif  
 
 " if "      checks the top element in the stack to determine if the condition is true; if the top element is -1, then the condition is true; if the top element is 0, then the condition is false; after "if" the top element in the stack is removed
@@ -66,7 +66,7 @@ example for define simple functions
 
 " endif "   marks the end of if statement
 
-# while loop
+### while loop
 (2) while loop contains three signals:    begin  *loop-condition*  while  *loop commands to apply when condition is true*  repeat
 
 " begin "   marks the begin of a while loop, should be followed by the loop condition
