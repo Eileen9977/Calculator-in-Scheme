@@ -89,5 +89,5 @@ example for define simple functions
  
  (2) : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a while loop;
  
- 5 fac 42 120 - +       *42*     --note that the while loop would not break until the condition is true--
+ 5 fac 42 120 - +       *42*     -note that the while loop would not break until the condition is true-
  
