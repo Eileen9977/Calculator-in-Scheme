@@ -2,11 +2,15 @@
 
 -> a calculator that allows arithmetic calculations and functions definitions with if statements and while loops
 
+
 -> the result of calculation would be stored in a stack; as long as the program is running the data stored in the stack would not be erased 
+
 
 -> operands implemented based on the concepts provided by gForth
 
--> operands include  
+
+-> operands include: 
+
 " + "       add
 
 " - "       subtract  
@@ -35,3 +39,38 @@
 
 " over "    insert the value of the second top element on the top of the stack; example: 1 2 3 4 over  --> 1 2 3 4 3
                      
+                     
+
+-> function definition
+
+" : "       signal the beginning of function define, followed by function name and function definition
+
+" ; "       signal marking the end of function define, followed right after the definition of the function
+
+example for define simple functions
+: getThree 1 2 + ;           --> when type in    1 2 getThree    we get    1 2 3 
+
+
+
+-> function definition with if statements and while loops
+attention: if statements and while loops can only be used through function definition; that to say, we can only apply if statement and while loops when they are defined inside of a function
+
+(1) if statement contains three signals:   *condition*  if  *if-true statements*  else  *if-false statements*  endif  
+
+" if "      checks the top element in the stack to determine if the condition is true; if the top element is -1, then the condition is true; if the top element is 0, then the condition is false; after "if" the top element in the stack is removed
+
+" else "    seperates the statement applied when condition is true and the statement applied when condition is false
+
+" endif "   marks the end of if statement
+
+
+(2) while loop contains three signals:    begin  *loop-condition*  while  *loop commands to apply when condition is true*  repeat
+
+" begin "   marks the begin of a while loop, should be followed by the loop condition
+
+" while "   check the condition by checking the top element in the stack; if it is -1 then apply the commands inside of the loop; if it is 0 then quit the loop; after " while " the top element in the stack is dropped
+
+" repeat "  " repeat " jumps back to the top of the loop, which is the "begin" in the loop in this program. "repeat" will forces the program to evaluate the loop condition again and "while" will decide whether to enter the loop again
+
+
+
