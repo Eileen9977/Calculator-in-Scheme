@@ -89,37 +89,41 @@ example for define simple functions
 
 ## Some Examples
 
- -> the program output would be in italic
+ -> the program output would be in quotations
  
- (1) : example1 2 = if 42 else 17 endif ;    
- *defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then insert 17*
+ (1) 
+      : example1 2 = if 42 else 17 endif ;    
+      "defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then       insert 17"
  
- 2 3 2 example1    
- *2 3 42* 
+       2 3 2 example1    
+       "2 3 42" 
  
- (2) : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    
- *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a while loop;
+ (2)  
+      : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    
+      *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a           while loop;
  
- 5 fac 42 120 - +      
- *42*     
+       5 fac 42 120 - +      
+       "42"     
  
- (3)  : if_call if 6 else 5 endif ;
+ (3)  
+      : if_call if 6 else 5 endif ;
       : ifcall 6 0 1 < if 0 1 < if_call 0 1 > if_call * else 2 endif + 6 + . ;
-      *defined two functions if_call and ifcall; ifcall is defined by if_call; ifcall has nesting if statements*
+      "defined two functions if_call and ifcall; ifcall is defined by if_call; ifcall has nesting if statements"
       
       ifcall
-      *42*
+      "42"
       
- (4) : loop1 5 8 * 2 - 5 begin 1 - dup while swap 1 + dup . swap repeat . ;
-     *defined a function named loop1 that applies this loop when being called*
+ (4) 
+     : loop1 5 8 * 2 - 5 begin 1 - dup while swap 1 + dup . swap repeat . ;
+     "defined a function named loop1 that applies this loop when being called"
      : loopnest 2 3 begin = while loop1 repeat . ;
-     *defined a function named loopnest with nesting loops*
+     "defined a function named loopnest with nesting loops"
      
      loop1 
-       *42*
+     "42"
        
      loopnest
-       *42*
+     "42"
  
  
  
