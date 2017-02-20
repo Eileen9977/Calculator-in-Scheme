@@ -94,29 +94,29 @@ example for define simple functions
  (1)  Defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then         insert 17
 
       : example1 2 = if 42 else 17 endif ;   
+      
        2 3 2 example1    
        "2 3 42" 
  
- (2)  
-      : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    
-      *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a           while loop;
+ (2)  Defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a              while loop;
  
+      : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    
+      
        5 fac 42 120 - +      
        "42"     
  
- (3)  
+ (3)  Defined two functions if_call and ifcall; ifcall is defined by if_call; ifcall has nesting if statements
+ 
       : if_call if 6 else 5 endif ;
       : ifcall 6 0 1 < if 0 1 < if_call 0 1 > if_call * else 2 endif + 6 + . ;
-      "defined two functions if_call and ifcall; ifcall is defined by if_call; ifcall has nesting if statements"
-      
+
       ifcall
       "42"
       
- (4) 
+ (4)  Defined a function named loop1 that applies this loop when being called; defined a function named loopnest with nesting loops
+ 
      : loop1 5 8 * 2 - 5 begin 1 - dup while swap 1 + dup . swap repeat . ;
-     "defined a function named loop1 that applies this loop when being called"
      : loopnest 2 3 begin = while loop1 repeat . ;
-     "defined a function named loopnest with nesting loops"
      
      loop1 
      "42"
