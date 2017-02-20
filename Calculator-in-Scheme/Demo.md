@@ -58,8 +58,11 @@ example for define simple functions
 
 -> attention: if statements and while loops can only be used through function definition; that to say, we can only apply if statement and while loops when they are defined inside of a function
 
-
 -> both if statements and while loops allow nesting
+
+-> while loop would not break until the condition is evaluted to false;
+
+
 ### if statement
 (1) if statement contains three signals:   *condition*  if  *if-true statements*  else  *if-false statements*  endif  
 
@@ -83,11 +86,16 @@ example for define simple functions
 
  -> the program output would be in italic
  
- (1) : example1 2 = if 42 else 17 endif ;     *defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then insert 17*
+ (1) : example1 2 = if 42 else 17 endif ;    
+ *defined a function named example1 that would insert 2, compare 2 with the former top element; if equal then insert 42; if not then insert 17*
  
- 2 3 2 example1    *2 3 42* 
+ 2 3 2 example1    
+ *2 3 42* 
  
- (2) : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a while loop;
+ (2) : fac 1 begin over 0 > while over * swap 1 - swap repeat nip ;    
+ *defined a function named fac that applies the commands 1 begin over 0 > whle over * swap 1 - swap repeat nip, which contains a while loop;
  
- 5 fac 42 120 - +       *42*     -note that the while loop would not break until the condition is true-
+ 5 fac 42 120 - +      
+ *42*     
+ 
  
