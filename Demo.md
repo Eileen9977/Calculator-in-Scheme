@@ -15,6 +15,7 @@
 
 -> Operands implemented based on the concepts provided by gForth
 
+-> Download all files. Compile and run the "multi-functional-calculator.scm" file to use the calculator . 
 
 ## Operands and Instructions 
 
